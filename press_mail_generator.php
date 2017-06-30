@@ -7,8 +7,8 @@ $subject .=$when;
 $headers = "Content-type: text/html; charset=UTF-8\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 
-$db = mysql_connect("localhost", "matt", "Mot!and4");
-mysql_select_db("tinytiny",$db);
+$db = mysql_connect("localhost", "username", "password");
+mysql_select_db("dbname",$db);
  
 $result = mysql_query("select f.title, e.link, e.title, e.content, u.note, u.feed_id from ttrss_entries e, ttrss_feeds f, ttrss_user_entries u where u.marked=1 and u.owner_uid=2 and u.int_id = e.id and u.feed_id=f.id order by u.feed_id",$db);
 $body = "<html><head>";
